@@ -1,0 +1,44 @@
+{
+  "name": "paytic/payments-btipay",
+  "type": "library",
+  "license": "MIT",
+  "description": "Payments module for bytic library for btipay",
+  "keywords": [],
+  "homepage": "https://github.com/paytic/payments-btipay",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Paytic\\Payments\\Btipay\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Paytic\\Payments\\Btipay\\Tests\\": "tests/src",
+      "Paytic\\Payments\\Btipay\\Tests\\Fixtures\\": "tests/fixtures"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "paytic/omnipay-btipay": "^3.0|dev-main"
+  },
+  "require-dev": {
+    "ext-zlib": "*",
+    "bytic/payments": "^1.0",
+    "paytic/payments-tests": "^1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "phpstan/extension-installer": true,
+      "bytic/phpqatools": true
+    }
+  },
+  "minimum-stability": "dev"
+}
