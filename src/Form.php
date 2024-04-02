@@ -10,8 +10,11 @@ use Paytic\Payments\Gateways\Providers\AbstractGateway\Form as AbstractForm;
  */
 class Form extends AbstractForm
 {
-    public function initElements()
+    public function initElements(): void
     {
+        parent::initElements();
+
+        $this->initElementSandbox();
         $this->addInput('username', 'Username');
         $this->addInput('password', 'Password');
     }
