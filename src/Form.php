@@ -17,5 +17,6 @@ class Form extends AbstractForm
         $this->initElementSandbox();
         $this->addInput('username', 'Username');
         $this->addInput('password', 'Password');
+        $this->addInput('callback_token', 'Callback Token (base64)');
     }
 }

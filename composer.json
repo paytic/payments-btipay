@@ -28,7 +28,7 @@
   },
   "require-dev": {
     "ext-zlib": "*",
-    "bytic/payments": "^1.0",
+    "paytic/payments": "^1.0",
     "paytic/payments-tests": "^1.0"
   },
   "config": {

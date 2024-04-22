@@ -18,7 +18,7 @@ class Gateway extends AbstractGateway
     /**
      * @return bool
      */
-    public function isActive()
+    public function isActive(): bool
     {
         if (strlen($this->getUsername()) > 5 && strlen($this->getPassword()) > 10) {
             return true;
