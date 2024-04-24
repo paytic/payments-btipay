@@ -2,8 +2,9 @@
 
 namespace Paytic\Payments\Btipay\Message\Traits;
 
-use ByTIC\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasGatewayRequestTrait;
-use ByTIC\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasModelRequest;
+use Paytic\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasGatewayRequestTrait;
+use Paytic\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasModelRequest;
+use Paytic\Payments\Btipay\Gateway;
 
 /**
  * Trait CompletePurchaseRequestTrait
@@ -28,12 +29,25 @@ trait CompletePurchaseRequestTrait
         return $return;
     }
 
+    protected function parseNotification()
+    {
+        if ($this->validateModel()) {
+            $model = $this->getModel();
+            $this->updateParametersFromPurchase($model);
+        }
+
+        return parent::parseNotification();
+    }
+
+
     /**
-     * @param \Paytic\Payments\Btipay\Gateway $model
+     * @param Gateway $model
      */
     protected function updateParametersFromGateway($gateway)
     {
-//        $this->setMerchant($gateway->getMerchant());
-        $this->setSecretKey($gateway->getSecretKey());
+        $this->setTestMode($gateway->getTestMode());
+        $this->setUsername($gateway->getUsername());
+        $this->setPassword($gateway->getPassword());
+        $this->setCallbackToken($gateway->getCallbackToken());
     }
 }
