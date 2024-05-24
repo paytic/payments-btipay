@@ -3,7 +3,7 @@
 namespace Paytic\Payments\Btipay\Message;
 
 use Paytic\Omnipay\Btipay\Message\ServerCompletePurchaseResponse as AbstractServerCompletePurchaseResponse;
-use ByTIC\Payments\Gateways\Providers\AbstractGateway\Message\Traits\CompletePurchaseResponseTrait;
+use Paytic\Payments\Gateways\Providers\AbstractGateway\Message\Traits\CompletePurchaseResponseTrait;
 
 /**
  * Class ServerCompletePurchaseResponse

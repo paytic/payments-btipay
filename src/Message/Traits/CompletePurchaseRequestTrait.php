@@ -29,7 +29,7 @@ trait CompletePurchaseRequestTrait
         return $return;
     }
 
-    protected function parseNotification()
+    protected function parseNotification(): array
     {
         if ($this->validateModel()) {
             $model = $this->getModel();
