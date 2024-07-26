@@ -21,10 +21,6 @@ class PurchaseRequest extends AbstractRequest
      */
     protected $transaction = null;
 
-    public function initialize(array $parameters = [])
-    {
-        parent::initialize($parameters);
-    }
     protected function generateRedirectUrl()
     {
         $transaction = $this->getTransaction();
